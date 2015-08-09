@@ -1,17 +1,27 @@
+
 ;;;; Package archives
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                          ("marmalade" . "https://marmalade-repo.org/packages/")
                          ("melpa" . "http://melpa.org/packages/")))
 
 ;; Icicles
+(add-to-list 'load-path "~/.emacs.d/elpa/icicles-20150804.1406")
 (require 'icicles)
 (icy-mode 1)
 
 ;; LaCarte
+(add-to-list 'load-path "~/.emacs.d/elpa/lacarte-20150104.2350")
 (require 'lacarte)
 (global-set-key [?\e ?\M-x] 'lacarte-execute-command)
 (global-set-key [?\M-`]     'lacarte-execute-menu-command)
 (global-set-key [f10]       'lacarte-execute-menu-command)
+
+;; Dired+
+;; This is not needed for emacs24.4
+(add-to-list 'load-path "/home/yanbin/.emacs.d/extra")
+(require 'dired-details)
+(dired-details-install)
+
 
 ;;;; House Keeping
 ;;; Start server
