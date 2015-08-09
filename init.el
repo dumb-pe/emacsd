@@ -7,6 +7,12 @@
 (require 'icicles)
 (icy-mode 1)
 
+;; LaCarte
+(require 'lacarte)
+(global-set-key [?\e ?\M-x] 'lacarte-execute-command)
+(global-set-key [?\M-`]     'lacarte-execute-menu-command)
+(global-set-key [f10]       'lacarte-execute-menu-command)
+
 ;;;; House Keeping
 ;;; Start server
 (server-start)
