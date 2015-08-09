@@ -3,6 +3,9 @@
                          ("marmalade" . "https://marmalade-repo.org/packages/")
                          ("melpa" . "http://melpa.org/packages/")))
 
+;; Icicles
+(require 'icicles)
+(icy-mode 1)
 
 ;;;; House Keeping
 ;;; Start server
