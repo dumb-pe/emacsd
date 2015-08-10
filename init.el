@@ -18,12 +18,12 @@
 (global-set-key [f10]       'lacarte-execute-menu-command)
 
 ;;; Dired+
-(add-to-list 'load-path "/home/yanbin/emacsd/elpa/dired+-20150730.1406")
+(add-to-list 'load-path "~/.emacs.d/elpa/dired+-20150730.1406")
 (require 'dired+)
 ;; Reuse dired buffer
 (diredp-toggle-find-file-reuse-dir 1)
 ;; This is not needed for emacs24.4
-(add-to-list 'load-path "/home/yanbin/.emacs.d/extra")
+(add-to-list 'load-path "~/.emacs.d/extra")
 (require 'dired-details)
 (dired-details-install)
 ;; Change some dired keybindings
@@ -34,6 +34,18 @@
             (local-set-key (kbd "r") 'dired-unmark)
             ))
 
+;;; Paredit
+(add-to-list 'load-path "~/.emacs.d/elpa/paredit-20150217.713")
+(autoload 'enable-paredit-mode "paredit"
+  "Turn on pseudo-structural editing of Lisp code."
+  t)
+(add-hook 'lisp-mode-hook 'enable-paredit-mode)
+(add-hook 'emacs-lisp-mode-hook       'enable-paredit-mode)
+(add-hook 'eval-expression-minibuffer-setup-hook 'enable-paredit-mode)
+(add-hook 'ielm-mode-hook             'enable-paredit-mode)
+(add-hook 'lisp-mode-hook             'enable-paredit-mode)
+(add-hook 'lisp-interaction-mode-hook 'enable-paredit-mode)
+(add-hook 'scheme-mode-hook           'enable-paredit-mode)
 
 ;;;; Set Appearance
 ;;; Font
