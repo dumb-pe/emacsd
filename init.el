@@ -19,6 +19,7 @@
 
 ;;; Dired+
 (add-to-list 'load-path "/home/yanbin/emacsd/elpa/dired+-20150730.1406")
+(require 'dired+)
 ;; Reuse dired buffer
 (diredp-toggle-find-file-reuse-dir 1)
 ;; This is not needed for emacs24.4
