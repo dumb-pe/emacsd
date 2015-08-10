@@ -87,3 +87,53 @@
 (show-paren-mode t)
 ;; Turn off the beep
 (setq visible-bell t)
+
+;;;; Global Editing Options
+;; Use 4 space for tab indent
+(setq-default tab-width 4)
+;; Use space (not tabs) for indenting
+(setq-default indent-tabs-mode nil)
+;; Don't save too many kills
+(setq kill-ring-max 50)
+;; Always write the last line
+(setq require-final-newline t)
+;; Replace highlighted text with what I type, rather than insert
+(delete-selection-mode t)
+;; Pgup/dn preserve the curser position in the screen
+(setq scroll-preserve-screen-position 1)
+;; Set default major mode to be text-mode
+(setq default-major-mode 'text-mode)
+;; Show trailing whitespaces
+(setq-default show-trailing-whitespace t)
+;; Indicate empty lines
+(setq default-indicate-empty-lines t)
+;; cut and copy in and from outside emacs
+(global-set-key (kbd "C-w") 'clipboard-kill-region)
+(global-set-key (kbd "M-w") 'clipboard-kill-ring-save)
+(global-set-key (kbd "C-y") 'clipboard-yank)
+;; Global key bindings. Default keybinding "M-g M-g".
+(global-set-key (kbd "C-c g") 'goto-line)
+(define-key global-map (kbd "RET") 'newline-and-indent)
+(define-key global-map (kbd "C-j") 'newline)
+;; Toggle trancate lines
+(define-key global-map (kbd "C-c t") 'toggle-truncate-lines)
+;; Expand word using recent typing
+(global-set-key (kbd "C-:") 'dabbrev-expand)
+; Delete the current indentation and join to the previous line
+(global-set-key "\C-x\d" 'delete-indentation)
+;; Delete horizontal spaces
+(global-set-key [C-backspace] 'delete-horizontal-space)
+;; Start Shell
+(global-set-key (kbd "C-c s") 'shell)
+;; Making the color right for "ls" command
+(autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
+(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+;; Register related keys
+(global-set-key (kbd "C-x r v") 'view-register)
+(global-set-key (kbd "C-x r a") 'append-to-register)
+(global-set-key (kbd "C-x r p") 'prepend-to-register)
+;; Reload buffer from file
+(global-set-key (kbd "<f5>") 'revert-buffer)
+;; Compare windows
+(global-set-key (kbd "C-M-=") 'compare-windows)
+
