@@ -47,6 +47,10 @@
 (add-hook 'lisp-interaction-mode-hook 'enable-paredit-mode)
 (add-hook 'scheme-mode-hook           'enable-paredit-mode)
 
+;;; Company mode
+(add-to-list 'load-path "~/.emacs.d/elpa/company-20150727.1415")
+(autoload 'company-mode "company" nil t)
+
 ;;;; Set Appearance
 ;;; Font
 ;; The following font is in file ~/elisp/courR18.pcf.gz
